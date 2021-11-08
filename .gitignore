@@ -1,0 +1,7 @@
+# ignore all WSI files
+WSI/LUAD/*
+WSI/LUSC/*
+
+# ignore the directory with files deemed corrupt by Bin Li, see:
+# 	https://github.com/binli123/dsmil-wsi/issues/16 for explanation
+TCGA-lung-WSI-corrupt/
