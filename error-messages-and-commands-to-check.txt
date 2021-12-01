@@ -1,0 +1,133 @@
+-----
+LUSC
+-----
+
+ERROR: bf509471-1b97-45b3-832d-32de71dc5160: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/bf509471-1b97-45b3
+-832d-32de71dc5160: {"message":"internal server error"}
+
+ERROR: aafb8ab2-99c9-4a77-a0b2-a5b94fba3587: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/aafb8ab2-99c9-4a77
+-a0b2-a5b94fba3587: {"message":"internal server error"}
+
+ERROR: 9981a3bc-29aa-425e-b553-64ecfb514b52: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/9981a3bc-29aa-425e
+-b553-64ecfb514b52: {"message":"internal server error"}
+
+ERROR: d7b57bca-6c28-4876-b726-b9e06bb359e6: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/d7b57bca-6c28-4876
+-b726-b9e06bb359e6: {"message":"internal server error"}
+
+ERROR: beaaa140-298f-411f-b6c9-4ba681bf9444: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/beaaa140-298f-411f
+-b6c9-4ba681bf9444: {"message":"internal server error"}
+
+ERROR: a45148f1-8457-418d-bb38-475ebddd7883: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/a45148f1[591/1106$
+-bb38-475ebddd7883: {"message":"internal server error"}
+
+ERROR: 242bd38e-f6eb-4e79-9952-6791d59c78f9: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/242bd38e-f6eb-4e79
+-9952-6791d59c78f9: {"message":"internal server error"}
+
+ERROR: 62bc72c2-70ad-409a-bde3-459712201e90: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/62bc72c2-70ad-409a
+-bde3-459712201e90: {"message":"internal server error"}
+
+ERROR: 98dd0957-8cbe-48e3-931a-76a58706d9b8: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/98dd0957-8cbe-48e3
+-931a-76a58706d9b8: {"message":"internal server error"}
+
+ERROR: 1993799e-15f8-4f52-9595-130f414f5edb: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/1993799e-15f8-4f52
+-9595-130f414f5edb: {"message":"internal server error"}
+
+ERROR: ad44be48-da3c-4a52-a0f2-e89d24b9eb2a: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/ad44be48-da3c-4a52
+-a0f2-e89d24b9eb2a: {"message":"internal server error"}
+
+ERROR: 351b0b8f-63f2-4549-b9dd-d54caec5557d: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/351b0b8f-63f2-4549
+-b9dd-d54caec5557d: {"message":"internal server error"}
+
+ERROR: 608e2269-04b4-4a20-aca8-d20f36800cc3: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/608e2269-04b4-4a20
+-aca8-d20f36800cc3: {"message":"internal server error"}
+
+ERROR: 82cd0408-d2b7-4274-87e9-2f03c9b4700d: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/82cd0408-d2b7-4274
+-87e9-2f03c9b4700d: {"message":"internal server error"}
+
+ERROR: e9bf1140-2af8-43ed-b131-d489a79166eb: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/e9bf1140-2af8-43ed
+-b131-d489a79166eb: {"message":"internal server error"}
+
+ERROR: f9cb04c8-3821-40e5-8ad4-57bd6d66489c: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/f9cb04c8-3821-40e5
+-8ad4-57bd6d66489c: {"message":"internal server error"}
+
+ERROR: 1b9a7d39-6001-47c4-9c09-33587f698e2f: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/1b9a7d39-6001-47c4
+-9c09-33587f698e2f: {"message":"internal server error"}
+
+ERROR: 0ca8d67e-1720-4ec8-a1e5-39e9b6b7d698: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/0ca8d67e-1720-4ec8
+-a1e5-39e9b6b7d698: {"message":"internal server error"}
+
+ERROR: 4a79f19b-3a67-4ce2-994c-7cd4e29979c7: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/4a79f19b-3a67-4ce2
+-994c-7cd4e29979c7: {"message":"internal server error"}
+
+ERROR: 116ad0c4-e53d-4c90-9113-99c18e5ed656: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/116ad0c4-e53d-4c9$
+-9113-99c18e5ed656: {"message":"internal server error"}
+
+
+-----
+LUAD
+-----
+
+ERROR: 9d02e693-4bed-4c61-964a-2743fa20ec6b: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/9d02e693-4bed-4c61
+-964a-2743fa20ec6b: {"message":"internal server error"}
+
+ERROR: 3ece9266-6efc-47f1-a894-bbe0969daa31: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/3ece9266-6efc-47f1
+-a894-bbe0969daa31: {"message":"internal server error"}
+
+ERROR: c7e8578a-1c57-4f26-bcd7-915e1e8d7e9e: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/c7e8578a-1c57-4f26
+-bcd7-915e1e8d7e9e: {"message":"internal server error"}
+
+ERROR: 62dac56f-cbe1-49b7-bc22-bfbbff43fb2d: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/62dac56f-cbe1-49b7
+-bc22-bfbbff43fb2d: {"message":"internal server error"}
+
+ERROR: 1c39f64e-c21c-4e9f-ade1-11a8df0d4635: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/1c39f64e-c21c-4e9f
+-ade1-11a8df0d4635: {"message":"internal server error"}
+
+ERROR: f7013b7b-9227-4606-9594-54689b8ab13b: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/f7013b7b-9227-4606
+-9594-54689b8ab13b: {"message":"internal server error"}
+
+ERROR: 23fb8d44-cb75-41c0-b1a0-80158e1096a0: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/23fb8d44-cb75-41c0
+-b1a0-80158e1096a0: {"message":"internal server error"}
+
+ERROR: f48f6931-9d01-498b-8c14-09233c3e9a50: 500 Server Error: INTERNAL SERVER ERROR for url: https://api.gdc.cancer.gov/data/f48f6931-9d01-498b
+-8c14-09233c3e9a50: {"message":"internal server error"}
+
+
+
+----
+Checks: seems like everything is fine
+----
+
+
+ls WSI/LUSC/ |  wc -l
+
+du WSI/LUSC/bf509471-1b97-45b3-832d-32de71dc5160/ -sh
+du WSI/LUSC/aafb8ab2-99c9-4a77-a0b2-a5b94fba3587/ -sh
+du WSI/LUSC/9981a3bc-29aa-425e-b553-64ecfb514b52/ -sh
+du WSI/LUSC/d7b57bca-6c28-4876-b726-b9e06bb359e6/ -sh
+du WSI/LUSC/beaaa140-298f-411f-b6c9-4ba681bf9444/ -sh
+du WSI/LUSC/a45148f1-8457-418d-bb38-475ebddd7883/ -sh
+du WSI/LUSC/242bd38e-f6eb-4e79-9952-6791d59c78f9/ -sh
+du WSI/LUSC/62bc72c2-70ad-409a-bde3-459712201e90/ -sh
+du WSI/LUSC/98dd0957-8cbe-48e3-931a-76a58706d9b8/ -sh
+du WSI/LUSC/1993799e-15f8-4f52-9595-130f414f5edb/ -sh
+du WSI/LUSC/ad44be48-da3c-4a52-a0f2-e89d24b9eb2a/ -sh
+du WSI/LUSC/351b0b8f-63f2-4549-b9dd-d54caec5557d/ -sh
+du WSI/LUSC/608e2269-04b4-4a20-aca8-d20f36800cc3/ -sh
+du WSI/LUSC/82cd0408-d2b7-4274-87e9-2f03c9b4700d/ -sh
+du WSI/LUSC/e9bf1140-2af8-43ed-b131-d489a79166eb/ -sh
+du WSI/LUSC/f9cb04c8-3821-40e5-8ad4-57bd6d66489c/ -sh
+du WSI/LUSC/1b9a7d39-6001-47c4-9c09-33587f698e2f/ -sh
+du WSI/LUSC/0ca8d67e-1720-4ec8-a1e5-39e9b6b7d698/ -sh
+du WSI/LUSC/4a79f19b-3a67-4ce2-994c-7cd4e29979c7/ -sh
+du WSI/LUSC/116ad0c4-e53d-4c90-9113-99c18e5ed656/ -sh
+
+ls WSI/LUAD/ |  wc -l
+
+du WSI/LUAD/9d02e693-4bed-4c61-964a-2743fa20ec6b/ -sh
+du WSI/LUAD/3ece9266-6efc-47f1-a894-bbe0969daa31/ -sh
+du WSI/LUAD/c7e8578a-1c57-4f26-bcd7-915e1e8d7e9e/ -sh
+du WSI/LUAD/62dac56f-cbe1-49b7-bc22-bfbbff43fb2d/ -sh
+du WSI/LUAD/1c39f64e-c21c-4e9f-ade1-11a8df0d4635/ -sh
+du WSI/LUAD/f7013b7b-9227-4606-9594-54689b8ab13b/ -sh
+du WSI/LUAD/23fb8d44-cb75-41c0-b1a0-80158e1096a0/ -sh
+du WSI/LUAD/f48f6931-9d01-498b-8c14-09233c3e9a50/ -sh
