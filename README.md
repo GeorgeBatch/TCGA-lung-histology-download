@@ -14,14 +14,23 @@ solved as described here:
 https://gadgetstouse.com/blog/2021/04/08/fix-macos-cannot-verify-app-is-free-from-malware/
 2. Clone this repository and `cd` into it.
 3. Create `./WSI/LUSC/` and `./WSI/LUAD` folders.
-4. If you choose to change the folder structure, make changes to the
-`./tcga-download/config-LUSC.dtt` and `./tcga-download/config-LUAD.dtt` accordingly.
-5. Run: `bash ./download-LUSC-and-LUAD.sh` to download the files. It will take a
+4. If you choose to change the folder structure, make changes to
+   1. `./tcga-download/config-LUSC.dtt`
+   2. `./tcga-download/config-LUAD.dtt`
+5. Run:
+
+```shell
+bash ./download-LUSC-and-LUAD.sh
+```
+to download the files. It will take a
 while. Restarting the download is not advisable. I am not sure, but I think the
 manifest file will need to be modified: already downloaded files fill need to be
 excluded.
 
-**Tip:** I used `tmux` for the process to continue on a remote surver after I closed the connedtion. See this [answer](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session) on StackExchange.
+**Tip:** I used `tmux` for the process to continue on a remote surver after I
+closed the connection. See this
+[how-to](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session)
+on StackExchange.
 
 ## Contents
 
