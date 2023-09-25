@@ -32,6 +32,14 @@ closed the connection. See this
 [how-to](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session)
 on StackExchange.
 
+6. Check that the downloaded slides were not currupted during the download:
+
+```shell
+md5sum ./WSI/*/*.svs > downloaded_md5sum_hashes.txt
+```
+
+The hashes should match the ones in `./tcga_download/` manifest files for LUAD and LUSC.
+
 ## Contents
 
 * `./tcga-download/` folder was originally copied from [here](binli-tcga-download).
@@ -56,6 +64,7 @@ repository and will have to be made.
 ## TODO:
 
 1. There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. The names of the folders changed (hense the manifest files needed to be downloaded from scratch) so the removed files still need to be identified. 
+
 2. It's suspicious that both LUSC and LUAD have **478 cases**.
 
 [binli-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
