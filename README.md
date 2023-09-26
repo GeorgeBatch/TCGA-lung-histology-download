@@ -65,7 +65,7 @@ repository and will have to be made.
 
 ## Note
 
-There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. The names of the folders changed, however, the slide names contain the case ID as the first 12 characters - see [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
+There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder has changed, however, the slide names contain the case ID as the first 12 characters - see [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
 
 [binli-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
