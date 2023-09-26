@@ -40,6 +40,8 @@ md5sum ./WSI/*/*.svs > downloaded_md5sum_hashes.txt
 
 The hashes should match the ones in `./tcga_download/` manifest files for LUAD and LUSC.
 
+The code to parse the manifest files and downloaded_md5sum_hashes.txt and check the matches is in [check-names.ipynb](check-names.ipynb).
+
 ## Contents
 
 * `./tcga-download/` folder was originally copied from [here](binli-tcga-download).
@@ -61,11 +63,10 @@ can be changed in the configuration files:
 turn contain the diagnostic slides. These folders are not present in this
 repository and will have to be made.
 
-## TODO:
+## Note
 
-1. There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. The names of the folders changed (hense the manifest files needed to be downloaded from scratch) so the removed files still need to be identified. 
+There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. The names of the folders changed, however, the slide names contain the case ID as the first 12 characters - see [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
-2. It's suspicious that both LUSC and LUAD have **478 cases**.
 
 [binli-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
 [TCGA-LUAD-manifest]: https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUAD%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files
