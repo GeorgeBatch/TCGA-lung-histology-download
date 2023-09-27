@@ -28,7 +28,7 @@ Every other patient has only 1 case.
 https://gdc.cancer.gov/access-data/gdc-data-transfer-tool and add it to your
 PATH or into `/usr/local/bin` if you have this directory (it's usually already
 added to the PATH). I did not have any problems with it on Linux, however on Apple
-devices you can ran into "MacOS cannot verify app is free from malware" which can be
+devices you can run into "MacOS cannot verify app is free from malware" which can be
 solved as described here:
 https://gadgetstouse.com/blog/2021/04/08/fix-macos-cannot-verify-app-is-free-from-malware/
 2. Clone this repository and `cd` into it.
