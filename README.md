@@ -63,15 +63,15 @@ The code to parse the manifest files and `downloaded_md5sum_hashes.txt` and chec
 
 ## Contents
 
-* [./tcga-download/](./tcga-download/) folder was originally copied from [here](dsmil-tcga-download).
+* [./tcga-download/](./tcga-download/) folder was originally copied from https://github.com/binli123/dsmil-wsi/tree/master/tcga-download.
 Some names present in the manifest files were not available for download with the
 `gdc-client`. So new manifest files were downloaded from these web pages on 
 on 03/11/2021 (date is in the names). The manifest files are:
   * TCGA-LUAD
-    * [manifest on TCGA portal](TCGA-LUAD-manifest)
+    * [manifest on TCGA portal](https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUAD%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files)
     * [downloaded manifest from 2021-11-03](./tcga-download/gdc_manifest.2021-11-03-TCGA-LUAD.txt): 541 slides from 478 patients with 479 cases
   * TCGA-LUSC
-    * [manifest on TCGA portal](TCGA-LUSC-manifest)
+    * [manifest on TCGA portal](https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUSC%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files)
     * [downloaded manifest from 2021-11-03](./tcga-download/gdc_manifest.2021-11-03-TCGA-LUSC.txt): 512 slides from 478 patients with 478 cases
 
 * [./download-LUSC-and-LUAD.sh](./download-LUSC-and-LUAD.sh) contains commands to download
@@ -88,7 +88,7 @@ can be changed in the configuration files:
 turn contain the diagnostic slides. These folders are not present in this
 repository and will have to be made.
 
-* [./dsmil-split/](./dsmil-split/) directory contains the information from the DSMIL-WSI ([paper](dsmil-paper-link), [code](dsmil-code-link)) on this dataset. See section Corrupted Slides Excluded in [DSMIL-WSI work](dsmil-paper-link) of this README for more details.
+* [./dsmil-split/](./dsmil-split/) directory contains the information from the DSMIL-WSI ([paper](https://openaccess.thecvf.com/content/CVPR2021/html/), [code](https://github.com/binli123/dsmil-wsi/)) on this dataset. See section "Corrupted Slides Excluded in DSMIL-WSI work" of this README for more details.
 
 * [./check-names.ipynb](./check-names.ipynb) contains code to check that the downloaded slides are not corrupted and that the names of the slides match the names in the manifest files. It also creates [./classes_extended_info.csv](./classes_extended_info.csv) file.
 
@@ -98,7 +98,7 @@ repository and will have to be made.
   * md5sum hashes of the downloaded slides
   * manifest files for LUAD and LUSC
 
-## Corrupted Slides Excluded in [DSMIL-WSI work](dsmil-paper-link)
+## Corrupted Slides Excluded in [DSMIL-WSI work](https://openaccess.thecvf.com/content/CVPR2021/html/)
 
 There seem to be some corrupted files that were excluded from the dataset in DSMIL-WSI work. see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder have changed, however, the slide names contain the patient ID (first 12 characters) and case ID (first 15 characters). See [./classes_extended_info.csv](./classes_extended_info.csv). Use [./check-names.ipynb](./check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
@@ -138,10 +138,3 @@ My investigation results:
 4. [Test set form google drive](./dsmil-split/google-drive/TEST_ID.csv) has 1 slide that is also in the [excluded set from google drive](./dsmil-split/google-drive/EX_ID.csv): `TCGA-05-4390-01Z-00-DX1`. However, all slides from the [test set on google drive](./dsmil-split/google-drive/TEST_ID.csv) are included in the [slides on GitHub](./dsmil-split/repository-download-TCGA-lung-ms/TCGA-lung-ms.csv).
 
 **Decision:** I will use the GitHub version of the dataset (excludes the 7 patients with 7 cases and 7 slides). I will use the [test set from google drive](./dsmil-split/google-drive/TEST_ID.csv) as the test set to be able to make a direct comparison to the [DSMIL-WSI results](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html) since this test set is fully included in the [slides on GitHub](./dsmil-split/repository-download-TCGA-lung-ms/TCGA-lung-ms.csv).
-
-
-[dsmil-paper-link]: https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html
-[dsmil-code-link]: https://github.com/binli123/dsmil-wsi/
-[dsmil-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
-[TCGA-LUAD-manifest]: https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUAD%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files
-[TCGA-LUSC-manifest]: https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUSC%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files 
