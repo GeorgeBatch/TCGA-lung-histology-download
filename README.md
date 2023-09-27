@@ -5,7 +5,7 @@ This repository contains the instructions of how to download the **diagnostic** 
 TCGA lung also has tissue slides which are were not diagnostic. Experimental strategy can be Tissue Slide (non-diagnostic) or/and Diagnostic Slide.
 
 
-** Important note**
+**Important note**
   * Patient ID is the first 12 characters of the slide name, e.g. TCGA-50-5066
   * Case ID is the first 15 characters of the slide name, e.g. TCGA-50-5066-01 or TCGA-50-5066-02
   * Slide name contains
