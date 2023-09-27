@@ -98,9 +98,43 @@ repository and will have to be made.
   * md5sum hashes of the downloaded slides
   * manifest files for LUAD and LUSC
 
-## Corrupted Slides Excluded by Other Groups
+## Corrupted Slides Excluded in [DSMIL-WSI work](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html)
 
-There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder has changed, however, the slide names contain the case ID as the first 12 characters - see [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
+There seem to be some corrupted files that were excluded from the dataset in DSMIL-WSI work. see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder have changed, however, the slide names contain the patient ID (first 12 characters) and case ID (first 15 characters). See [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
+
+My investigation results:
+
+1. All of the slides have a significantly darker background around the tissue.
+
+2. In Google Drive version, 11 LUAD parients 1 case per patient and 1 slide per case were excluded
+
+| patient_id   | case_id          | slide_id_short              |
+|--------------|------------------|-----------------------------|
+| TCGA-05-4384| TCGA-05-4384-01 | TCGA-05-4384-01Z-00-DX1    |
+| TCGA-05-4390| TCGA-05-4390-01 | TCGA-05-4390-01Z-00-DX1    |
+| TCGA-05-4410| TCGA-05-4410-01 | TCGA-05-4410-01Z-00-DX1    |
+| TCGA-05-4425| TCGA-05-4425-01 | TCGA-05-4425-01Z-00-DX1    |
+| TCGA-05-5420| TCGA-05-5420-01 | TCGA-05-5420-01Z-00-DX1    |
+| TCGA-05-5423| TCGA-05-5423-01 | TCGA-05-5423-01Z-00-DX1    |
+| TCGA-05-5425| TCGA-05-5425-01 | TCGA-05-5425-01Z-00-DX1    |
+| TCGA-05-5428| TCGA-05-5428-01 | TCGA-05-5428-01Z-00-DX1    |
+| TCGA-05-5429| TCGA-05-5429-01 | TCGA-05-5429-01Z-00-DX1    |
+| TCGA-05-5715| TCGA-05-5715-01 | TCGA-05-5715-01Z-00-DX1    |
+| TCGA-44-7661| TCGA-44-7661-01 | TCGA-44-7661-01Z-00-DX1    |
+
+
+3. In GitHub version, 7 out of the Google Drive's 11 patients with their 7 cases and 7 slides were exluded. The remaining 4 patients with 4 cases and 4 slides were not excluded.
+
+| patient_id   | case_id          | slide_id_short              |
+|--------------|------------------|-----------------------------|
+| TCGA-05-4384| TCGA-05-4384-01 | TCGA-05-4384-01Z-00-DX1    |
+| TCGA-05-4410| TCGA-05-4410-01 | TCGA-05-4410-01Z-00-DX1    |
+| TCGA-05-4425| TCGA-05-4425-01 | TCGA-05-4425-01Z-00-DX1    |
+| TCGA-05-5420| TCGA-05-5420-01 | TCGA-05-5420-01Z-00-DX1    |
+| TCGA-05-5423| TCGA-05-5423-01 | TCGA-05-5423-01Z-00-DX1    |
+| TCGA-05-5425| TCGA-05-5425-01 | TCGA-05-5425-01Z-00-DX1    |
+| TCGA-05-5715| TCGA-05-5715-01 | TCGA-05-5715-01Z-00-DX1    |
+
 
 
 [binli-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
