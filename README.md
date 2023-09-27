@@ -88,7 +88,7 @@ can be changed in the configuration files:
 turn contain the diagnostic slides. These folders are not present in this
 repository and will have to be made.
 
-* [./dsmil-split/](./dsmil-split/) directory contains the information from the DSMIL-WSI ([paper](https://openaccess.thecvf.com/content/CVPR2021/html/), [code](https://github.com/binli123/dsmil-wsi/)) on this dataset. See section "Corrupted Slides Excluded in DSMIL-WSI work" of this README for more details.
+* [./dsmil-split/](./dsmil-split/) directory contains the information from the DSMIL-WSI ([paper](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html), [code](https://github.com/binli123/dsmil-wsi/)) on this dataset. See section "Corrupted Slides Excluded in DSMIL-WSI work" of this README for more details.
 
 * [./check-names.ipynb](./check-names.ipynb) contains code to check that the downloaded slides are not corrupted and that the names of the slides match the names in the manifest files. It also creates [./classes_extended_info.csv](./classes_extended_info.csv) file.
 
@@ -98,7 +98,7 @@ repository and will have to be made.
   * md5sum hashes of the downloaded slides
   * manifest files for LUAD and LUSC
 
-## Corrupted Slides Excluded in [DSMIL-WSI work](https://openaccess.thecvf.com/content/CVPR2021/html/)
+## Corrupted Slides Excluded in [DSMIL-WSI work](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html)
 
 There seem to be some corrupted files that were excluded from the dataset in DSMIL-WSI work. see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder have changed, however, the slide names contain the patient ID (first 12 characters) and case ID (first 15 characters). See [./classes_extended_info.csv](./classes_extended_info.csv). Use [./check-names.ipynb](./check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
