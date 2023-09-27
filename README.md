@@ -8,7 +8,7 @@ TCGA lung also has tissue slides which are were not diagnostic. Experimental str
 **Important note**
   * Patient ID is the first 12 characters of the slide name, e.g. TCGA-50-5066
   * Case ID is the first 15 characters of the slide name, e.g. TCGA-50-5066-01 or TCGA-50-5066-02
-  * Slide name contains
+  * Slide name, e.g. TCGA-50-5066-01Z-00-DX1.e161df31-84a4-40a4-a6a2-748b60820f77 contains the slide name TCGA-50-5066-01Z-00-DX1 and some uid e161df31-84a4-40a4-a6a2-748b60820f77; all slide names in the downloaded dataset are unique and so are the uid's so that there is a one-to-one mapping between the slide names and the uid's.
 
 Source: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/#creating-barcodes
 
