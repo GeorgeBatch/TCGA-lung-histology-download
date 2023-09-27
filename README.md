@@ -19,7 +19,7 @@ Patient `TCGA-50-5066` has 2 cases for LUAD. The case IDs are:
   * `TCGA-50-5066-01` with diagnostic slide: `TCGA-50-5066-01Z-00-DX1`
   * `TCGA-50-5066-02` with diagnostic slide: `TCGA-50-5066-02Z-00-DX1`
 
-Every other patient has only 1 case.
+Every other patient has only 1 case per patient.
 
 ## Instructions for Downloading the Dataset
 
