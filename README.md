@@ -59,7 +59,7 @@ md5sum ./WSI/*/*.svs > downloaded_md5sum_hashes.txt
 
 The hashes should match the ones in `./tcga_download/` manifest files for LUAD and LUSC.
 
-The code to parse the manifest files and `downloaded_md5sum_hashes.txt`` and check the matches is in [check-names.ipynb](check-names.ipynb).
+The code to parse the manifest files and `downloaded_md5sum_hashes.txt` and check the matches is in [check-names.ipynb](check-names.ipynb).
 
 ## Contents
 
