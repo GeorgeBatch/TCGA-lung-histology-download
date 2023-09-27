@@ -1,8 +1,27 @@
 # TCGA Lung Dataset
 
-This repository contains the instructions of how to download the diagnostic slides for the lung portion of the TCGA dataset. It will require ~800GB of space.
+This repository contains the instructions of how to download the **diagnostic** slides for the lung portion of the TCGA dataset. It will require ~800GB of space.
 
-## Instructions
+TCGA lung also has tissue slides which are were not diagnostic. Experimental strategy can be Tissue Slide (non-diagnostic) or/and Diagnostic Slide.
+
+
+** Important note**
+  * Patient ID is the first 12 characters of the slide name, e.g. TCGA-50-5066
+  * Case ID is the first 15 characters of the slide name, e.g. TCGA-50-5066-01 or TCGA-50-5066-02
+  * Slide name contains
+
+Source: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/#creating-barcodes
+
+This explains why the web page refers to **478 cases for LUAD** and 478 cases for LUSC, while the manifest files contain **479 cases for LUAD** and 478 cases for LUSC.
+The web page really refers to the patients, while the manifest files refer to the cases.
+
+Patient TCGA-50-5066 has 2 cases for LUAD. The case IDs are:
+  * TCGA-50-5066-01 with diagnostic slide: TCGA-50-5066-01Z-00-DX1
+  * TCGA-50-5066-02 with diagnostic slide: TCGA-50-5066-02Z-00-DX1
+
+Every other patient has only 1 case.
+
+## Instructions for Downloading the Dataset
 
 0. Make sure you have enough disk space: ~800**GB**.
 1. Download the `gdc-client` Data Transfer Tool binaries from
@@ -40,16 +59,21 @@ md5sum ./WSI/*/*.svs > downloaded_md5sum_hashes.txt
 
 The hashes should match the ones in `./tcga_download/` manifest files for LUAD and LUSC.
 
-The code to parse the manifest files and downloaded_md5sum_hashes.txt and check the matches is in [check-names.ipynb](check-names.ipynb).
+The code to parse the manifest files and `downloaded_md5sum_hashes.txt`` and check the matches is in [check-names.ipynb](check-names.ipynb).
 
 ## Contents
 
 * `./tcga-download/` folder was originally copied from [here](binli-tcga-download).
 Some names present in the manifest files were not available for download with the
 `gdc-client`. So new manifest files were downloaded from these web pages on 
-on 03/11/2021 (date is in the names)
-  * [TCGA-LUAD manifest](TCGA-LUAD-manifest) (541 slides from 478 cases)
-  * [TCGA-LUSC manifest](TCGA-LUSC-manifest) (512 slides from 478 cases)
+on 03/11/2021 (date is in the names). The manifest files are:
+  * TCGA-LUAD
+    * [manifest on TCGA portal](TCGA-LUAD-manifest)
+    * [downloaded manifest from 2021-11-03](./tcga-download/gdc_manifest.2021-11-03-TCGA-LUAD.txt): 541 slides from 478 patients with 479 cases
+  * TCGA-LUSC
+    * [manifest on TCGA portal](TCGA-LUSC-manifest)
+    * [downloaded manifest from 2021-11-03](./tcga-download/gdc_manifest.2021-11-03-TCGA-LUSC.txt): 512 slides from 478 patients with 478 cases
+
 * `./download-LUSC-and-LUAD.sh` contains commands to download
 **3 diagnostic slides (check that everything is fine first)** from both the
 LUAD (https://portal.gdc.cancer.gov/projects/TCGA-LUAD) and the
@@ -59,11 +83,22 @@ into `./WSI/LUSC/` and `./WSI/LUAD/` respectively. To download all files, remove
 can be changed in the configuration files:
   * `./tcga-download/config-LUSC.dtt`
   * `./tcga-download/config-LUAD.dtt`
+
 * `./WSI/` folder contains 2 subfolders `./WSI/LUSC/` and `./WSI/LUAD`, which in
 turn contain the diagnostic slides. These folders are not present in this
 repository and will have to be made.
 
-## Note
+* `./dsmil-split/` directory contains 
+
+* `./check-names.ipynb` contains code to check that the downloaded slides are not corrupted and that the names of the slides match the names in the manifest files. It also creates `./classes_extended_info.csv` file.
+
+* `./classes_extended_info.csv` was created using [check-names.ipynb](check-names.ipynb) contains the patient ID, case ID, slide ID, slide md5sum, for each slide.
+  The file was created by combining 
+  * list of the downloaded slides
+  * md5sum hashes of the downloaded slides
+  * manifest files for LUAD and LUSC
+
+## Corrupted Slides Excluded by Other Groups
 
 There seem to be some corrupted files that other groups excluded from the dataset, see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder has changed, however, the slide names contain the case ID as the first 12 characters - see [classes_extended_info.csv](classes_extended_info.csv). Use [check-names.ipynb](check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
