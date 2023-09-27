@@ -6,18 +6,18 @@ TCGA lung also has tissue slides which are were not diagnostic. Experimental str
 
 
 **Important note**
-  * Patient ID is the first 12 characters of the slide name, e.g. TCGA-50-5066
-  * Case ID is the first 15 characters of the slide name, e.g. TCGA-50-5066-01 or TCGA-50-5066-02
-  * Slide name, e.g. TCGA-50-5066-01Z-00-DX1.e161df31-84a4-40a4-a6a2-748b60820f77 contains the slide name TCGA-50-5066-01Z-00-DX1 and some uid e161df31-84a4-40a4-a6a2-748b60820f77; all slide names in the downloaded dataset are unique and so are the uid's so that there is a one-to-one mapping between the slide names and the uid's.
+  * Patient ID is the first 12 characters of the slide name, e.g. `TCGA-50-5066`
+  * Case ID is the first 15 characters of the slide name, e.g. `TCGA-50-5066-01` or `TCGA-50-5066-02`
+  * Slide name, e.g. `TCGA-50-5066-01Z-00-DX1.e161df31-84a4-40a4-a6a2-748b60820f77` contains the slide name `TCGA-50-5066-01Z-00-DX1` and some uid `e161df31-84a4-40a4-a6a2-748b60820f77`; all slide names in the downloaded dataset are unique and so are the uid's so that there is a one-to-one mapping between the slide names and the uid's.
 
 Source: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/#creating-barcodes
 
 This explains why the web page refers to **478 cases for LUAD** and 478 cases for LUSC, while the manifest files contain **479 cases for LUAD** and 478 cases for LUSC.
 The web page really refers to the patients, while the manifest files refer to the cases.
 
-Patient TCGA-50-5066 has 2 cases for LUAD. The case IDs are:
-  * TCGA-50-5066-01 with diagnostic slide: TCGA-50-5066-01Z-00-DX1
-  * TCGA-50-5066-02 with diagnostic slide: TCGA-50-5066-02Z-00-DX1
+Patient `TCGA-50-5066` has 2 cases for LUAD. The case IDs are:
+  * `TCGA-50-5066-01` with diagnostic slide: `TCGA-50-5066-01Z-00-DX1`
+  * `TCGA-50-5066-02` with diagnostic slide: `TCGA-50-5066-02Z-00-DX1`
 
 Every other patient has only 1 case.
 
@@ -135,6 +135,9 @@ My investigation results:
 | TCGA-05-5425| TCGA-05-5425-01 | TCGA-05-5425-01Z-00-DX1    |
 | TCGA-05-5715| TCGA-05-5715-01 | TCGA-05-5715-01Z-00-DX1    |
 
+4. [Test set form google drive](./dsmil-split/google-drive/TEST_ID.csv) has 1 slide that is also in the [excluded set from google drive](./dsmil-split/google-drive/EX_ID.csv): `TCGA-05-4390-01Z-00-DX1`. However, all slides from the [test set on google drive](./dsmil-split/google-drive/TEST_ID.csv) are included in the [slides on GitHub](./dsmil-split/repository-download-TCGA-lung-ms/TCGA-lung-ms.csv).
+
+**Decision:** I will use the GitHub version of the dataset (excludes the 7 patients with 7 cases and 7 slides). I will use the [test set from google drive](./dsmil-split/google-drive/TEST_ID.csv) as the test set to be able to make a direct comparison to the [DSMIL-WSI results](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html) since this test set is fully included in the [slides on GitHub](./dsmil-split/repository-download-TCGA-lung-ms/TCGA-lung-ms.csv).
 
 
 [binli-tcga-download]: https://github.com/binli123/dsmil-wsi/tree/master/tcga-download
