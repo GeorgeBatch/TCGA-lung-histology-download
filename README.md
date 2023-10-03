@@ -61,7 +61,7 @@ bash ./download-LUSC-and-LUAD.sh
 to download the files. It will take a
 while. Restarting the download is not advisable. I am not sure, but I think the
 manifest file will need to be modified: already downloaded files fill need to be
-excluded.
+excluded. See: https://docs.gdc.cancer.gov/Data_Transfer_Tool/Users_Guide/Data_Download_and_Upload/#resuming-a-failed-download
 
 
 
