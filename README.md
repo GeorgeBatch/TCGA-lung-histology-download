@@ -32,6 +32,19 @@ devices you can run into "MacOS cannot verify app is free from malware" which ca
 solved as described here:
 https://gadgetstouse.com/blog/2021/04/08/fix-macos-cannot-verify-app-is-free-from-malware/
 2. Clone this repository and `cd` into it.
+
+If you want to make sure that the manifests have not changed, download new ones from TCGA data portal and check them. Example of checking the versions from 2023-10-03 vs 2021-11-03. The manifests have not changed.
+```
+for file in gdc_manifest.2023-10-03-TCGA-LUSC.txt gdc_manifest.2023-10-03-TCGA-LUAD.txt gdc_manifest.2021-11-03-TCGA-LUSC.txt gdc_manifest.2021-11-03-TCGA-LUAD.txt; do
+    sorted_file="${file%.txt}-sorted.txt"
+    echo -e "id\tfilename\tmd5\tsize\tstate" > "$sorted_file"
+    tail -n +2 "$file" | sort -k2,2 >> "$sorted_file"
+done
+
+diff gdc_manifest.2023-10-03-TCGA-LUAD-sorted.txt gdc_manifest.2021-11-03-TCGA-LUAD-sorted.txt
+diff gdc_manifest.2023-10-03-TCGA-LUSC-sorted.txt gdc_manifest.2021-11-03-TCGA-LUSC-sorted.txt
+```
+
 3. Create `./WSI/LUSC/` and `./WSI/LUAD` folders.
 4. If you choose to change the folder structure, make changes to
    1. `./tcga-download/config-LUSC.dtt`
@@ -45,6 +58,14 @@ to download the files. It will take a
 while. Restarting the download is not advisable. I am not sure, but I think the
 manifest file will need to be modified: already downloaded files fill need to be
 excluded.
+
+
+
+
+
+
+
+
 
 **Tip:** I used `tmux` for the process to continue on a remote surver after I
 closed the connection. See this
