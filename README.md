@@ -35,6 +35,8 @@ https://gadgetstouse.com/blog/2021/04/08/fix-macos-cannot-verify-app-is-free-fro
 
 If you want to make sure that the manifests have not changed, download new ones from TCGA data portal and check them. Example of checking the versions from 2023-10-03 vs 2021-11-03. The manifests have not changed.
 ```
+cd tcga-download
+
 for file in gdc_manifest.2023-10-03-TCGA-LUSC.txt gdc_manifest.2023-10-03-TCGA-LUAD.txt gdc_manifest.2021-11-03-TCGA-LUSC.txt gdc_manifest.2021-11-03-TCGA-LUAD.txt; do
     sorted_file="${file%.txt}-sorted.txt"
     echo -e "id\tfilename\tmd5\tsize\tstate" > "$sorted_file"
@@ -43,6 +45,8 @@ done
 
 diff gdc_manifest.2023-10-03-TCGA-LUAD-sorted.txt gdc_manifest.2021-11-03-TCGA-LUAD-sorted.txt
 diff gdc_manifest.2023-10-03-TCGA-LUSC-sorted.txt gdc_manifest.2021-11-03-TCGA-LUSC-sorted.txt
+
+cd ..
 ```
 
 3. Create `./WSI/LUSC/` and `./WSI/LUAD` folders.
