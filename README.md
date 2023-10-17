@@ -56,7 +56,7 @@ cd ..
 5. Run:
 
 ```shell
-bash ./download-LUSC-and-LUAD.sh
+bash ./0-download-LUSC-and-LUAD.sh
 ```
 to download the files. It will take a
 while. Restarting the download is not advisable. I am not sure, but I think the
@@ -84,7 +84,7 @@ md5sum ./WSI/*/*.svs > downloaded_md5sum_hashes.txt
 
 The hashes should match the ones in `./tcga_download/` manifest files for LUAD and LUSC.
 
-The code to parse the manifest files and `downloaded_md5sum_hashes.txt` and check the matches is in [check-names.ipynb](check-names.ipynb).
+The code to parse the manifest files and `downloaded_md5sum_hashes.txt` and check the matches is in [2-check-names.ipynb](2-check-names.ipynb).
 
 ## Contents
 
@@ -99,12 +99,12 @@ on 03/11/2021 (date is in the names). The manifest files are:
     * [manifest on TCGA portal](https://portal.gdc.cancer.gov/repository?facetTab=files&filters=%7B%22content%22%3A%5B%7B%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-LUSC%22%5D%7D%2C%22op%22%3A%22in%22%7D%2C%7B%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Diagnostic%20Slide%22%5D%7D%2C%22op%22%3A%22in%22%7D%5D%2C%22op%22%3A%22and%22%7D&searchTableTab=files)
     * [downloaded manifest from 2021-11-03](./tcga-download/gdc_manifest.2021-11-03-TCGA-LUSC.txt): 512 slides from 478 patients with 478 cases
 
-* [./download-LUSC-and-LUAD.sh](./download-LUSC-and-LUAD.sh) contains commands to download
+* [./0-download-LUSC-and-LUAD.sh](./0-download-LUSC-and-LUAD.sh) contains commands to download
 **3 diagnostic slides (check that everything is fine first)** from both the
 LUAD (https://portal.gdc.cancer.gov/projects/TCGA-LUAD) and the
 LUSC (https://portal.gdc.cancer.gov/projects/TCGA-LUSC) sets of the TCGA
 into `./WSI/LUSC/` and `./WSI/LUAD/` respectively. To download all files, remove
-"-pilot" from the commands in `./download-LUSC-and-LUAD.sh`. The destinations
+"-pilot" from the commands in `./0-download-LUSC-and-LUAD.sh`. The destinations
 can be changed in the configuration files:
   * `./tcga-download/config-LUSC.dtt`
   * `./tcga-download/config-LUAD.dtt`
@@ -115,9 +115,9 @@ repository and will have to be made.
 
 * [./dsmil-split/](./dsmil-split/) directory contains the information from the DSMIL-WSI ([paper](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html), [code](https://github.com/binli123/dsmil-wsi/)) on this dataset. See section "Corrupted Slides Excluded in DSMIL-WSI work" of this README for more details.
 
-* [./check-names.ipynb](./check-names.ipynb) contains code to check that the downloaded slides are not corrupted and that the names of the slides match the names in the manifest files. It also creates [./classes_extended_info.csv](./classes_extended_info.csv) file.
+* [./2-check-names.ipynb](./2-check-names.ipynb) contains code to check that the downloaded slides are not corrupted and that the names of the slides match the names in the manifest files. It also creates [./classes_extended_info.csv](./classes_extended_info.csv) file.
 
-* [./classes_extended_info.csv](./classes_extended_info.csv) was created using [./check-names.ipynb](./check-names.ipynb) contains the patient ID, case ID, slide ID, slide md5sum, for each slide.
+* [./classes_extended_info.csv](./classes_extended_info.csv) was created using [./2-check-names.ipynb](./2-check-names.ipynb) contains the patient ID, case ID, slide ID, slide md5sum, for each slide.
   The file was created by combining 
   * list of the downloaded slides
   * md5sum hashes of the downloaded slides
@@ -125,7 +125,7 @@ repository and will have to be made.
 
 ## Corrupted Slides Excluded in [DSMIL-WSI work](https://openaccess.thecvf.com/content/CVPR2021/html/Li_Dual-Stream_Multiple_Instance_Learning_Network_for_Whole_Slide_Image_Classification_CVPR_2021_paper.html)
 
-There seem to be some corrupted files that were excluded from the dataset in DSMIL-WSI work. see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder have changed, however, the slide names contain the patient ID (first 12 characters) and case ID (first 15 characters). See [./classes_extended_info.csv](./classes_extended_info.csv). Use [./check-names.ipynb](./check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
+There seem to be some corrupted files that were excluded from the dataset in DSMIL-WSI work. see [issue](https://github.com/binli123/dsmil-wsi/issues/16) that gives a [Google Drive Link](https://drive.google.com/drive/folders/1UobMSqJEqINX2izxrwbgprugjlTporSQ) to the TCGA-lung dataset. When using the code from the [dsmil-wsi repo](https://github.com/binli123/dsmil-wsi) to download pre-trained features for TCGA-lung, the excluded set is different. The names of the folders within the google drive folder have changed, however, the slide names contain the patient ID (first 12 characters) and case ID (first 15 characters). See [./classes_extended_info.csv](./classes_extended_info.csv). Use [./2-check-names.ipynb](./2-check-names.ipynb) code to investigate and choose which of the slides you want to exclude.
 
 My investigation results:
 
