@@ -86,6 +86,8 @@ The hashes should match the ones in `./tcga_download/` manifest files for LUAD a
 
 The code to parse the manifest files and `downloaded_md5sum_hashes.txt` and check the matches is in [2-check-names.ipynb](2-check-names.ipynb).
 
+If you have checksums file already, you can use a trick shown here: https://askubuntu.com/questions/318530/generate-md5-checksum-for-all-files-in-a-directory
+
 ## Contents
 
 * [./tcga-download/](./tcga-download/) folder was originally copied from https://github.com/binli123/dsmil-wsi/tree/master/tcga-download.
